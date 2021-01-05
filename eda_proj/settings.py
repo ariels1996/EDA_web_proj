@@ -21,12 +21,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '6egz2$k_@v%r_mmpuq*rb#7_du8qo^*7l49dn=@o0q^)-161@!'
+with open(os.path.join(BASE_DIR, 'static', 'secret_key.txt'))as f:
+    SECRET_KEY = f.read().strip()
+#SECRET_KEY = '6egz2$k_@v%r_mmpuq*rb#7_du8qo^*7l49dn=@o0q^)-161@!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['18.235.139.255', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['18.235.139.255', 'ec2-18-235-139-255.compute-1.amazonaws.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -80,7 +82,7 @@ WSGI_APPLICATION = 'eda_proj.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'db', 'db.sqlite3'),
     }
 }
 
@@ -122,11 +124,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-<<<<<<< HEAD
-STATIC_ROOT = os.path.join(BASE_DIR,'www_dir','static')
-=======
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'eda', "static"),
 ]
->>>>>>> 31faaad8a582810aa60846c40ab355f35332ee77
