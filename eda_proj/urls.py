@@ -15,10 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from eda.views import intro
+from eda.views import intro_view, eda_view
 
 urlpatterns = [
-    path('', intro), # 127.0.0.1/
+    path('', intro_view), # 127.0.0.1/
     path('admin/', admin.site.urls),
-    #path('eda/', eda_view),
+    path('eda/', eda_view, name='eda'),
 ]

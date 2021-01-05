@@ -229,6 +229,9 @@ header hr {
 .experience .experience-content {
   padding-bottom: 14px;
 }
+.experience .experience-content p{
+  margin-bottom: 10px;
+}
 .experience h5 {
   display: inline-block;
 }
