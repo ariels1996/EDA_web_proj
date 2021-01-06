@@ -26,7 +26,7 @@ with open(os.path.join(BASE_DIR, 'static', 'secret_key.txt'))as f:
 #SECRET_KEY = '6egz2$k_@v%r_mmpuq*rb#7_du8qo^*7l49dn=@o0q^)-161@!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['18.235.139.255', 'ec2-18-235-139-255.compute-1.amazonaws.com', 'localhost', '127.0.0.1']
 
