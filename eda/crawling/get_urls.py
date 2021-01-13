@@ -13,7 +13,7 @@ class Urls :
         table_rows = []
 
         # 페이지를 넘겨가면서 a 태그 크롤링 수행, list 만들어주기 
-        for page in range(1):
+        for page in range(5):
             req = requests.get(source_url+str(page+1))
             html = req.content
             soup = BeautifulSoup(html, 'lxml')
